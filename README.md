@@ -22,6 +22,18 @@ python -m http.server 5173
 
 Danach im Browser `http://localhost:5173` öffnen.
 
+## Quellcode-Verwaltung
+
+Der Code liegt in diesem Verzeichnis als lokales Git-Repository. Um ihn auf GitHub oder einen anderen Remote-Dienst zu übertragen, richte einfach ein Remote-Repository ein und push die vorhandene Historie:
+
+```bash
+# optional: neues Repository auf GitHub anlegen und dessen URL notieren
+git remote add origin https://github.com/<user>/<repo>.git
+git push -u origin main
+```
+
+Solange kein Remote gesetzt ist, verbleibt das Projekt ausschließlich auf deinem Rechner. Alle Funktionen der App laufen vollständig lokal im Browser, es ist also keine Server-Infrastruktur erforderlich.
+
 ## Tests
 
 Automatisierte Tests sind aktuell nicht enthalten. Die Kernlogik (Parsing, Matching, Persistenz) ist modular aufgebaut und kann perspektivisch mit Unit- oder Integrationstests ergänzt werden.

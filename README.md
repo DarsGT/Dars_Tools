@@ -15,12 +15,16 @@ Ein rein clientseitiges Frontend zur Analyse textbasierter PDF-Ausschreibungen. 
 
 Da das Projekt ohne Build-Tool funktioniert, genügt ein statischer Webserver. Die Bibliotheken **pdf.js** und **jsPDF** werden zur Vereinfachung über CDNs eingebunden; für einen vollständig offlinefähigen Einsatz können die Dateien lokal gespiegelt und in `src/workers/pdfWorker.js` bzw. `src/main.js` referenziert werden.
 
-```bash
-# Beispiel mit Python
-python -m http.server 5173
-```
+### In 3 Schritten im Browser öffnen
 
-Danach im Browser `http://localhost:5173` öffnen.
+1. Öffne ein Terminal in diesem Projektordner (`LV_Aanlyzer`).
+2. Starte einen einfachen Webserver, zum Beispiel so:
+   ```bash
+   python -m http.server 5173
+   ```
+3. Öffne deinen Browser und gib die Adresse `http://localhost:5173` ein.
+
+Nach dem Laden der Seite kannst du direkt PDFs analysieren – es ist keine weitere Installation nötig.
 
 ## Quellcode-Verwaltung
 

@@ -3,7 +3,7 @@ import { setPositions, upsertPosition, removePosition, selectPosition, setAnalys
 import { initRender, renderPositions } from './render.js';
 import { scorePositions, createOverview } from './analysis.js';
 
-const worker = new Worker('./src/workers/pdfWorker.js');
+const worker = new Worker(new URL('./workers/pdfWorker.js', import.meta.url));
 let currentFile = null;
 
 function generateId() {
@@ -264,7 +264,7 @@ function setupExportButtons() {
     const url = URL.createObjectURL(blob);
     const anchor = document.createElement('a');
     anchor.href = url;
-    anchor.download = 'positions-manager.json';
+    anchor.download = 'dars-tools-positions.json';
     anchor.click();
     URL.revokeObjectURL(url);
   });
@@ -319,7 +319,7 @@ function setupExportButtons() {
     const margin = 48;
     doc.setFontSize(18);
     doc.setTextColor('#003382');
-    doc.text('Ausschreibungs-Analyzer Alpha', margin, 64);
+    doc.text('Dars Tools – LV Analyzer', margin, 64);
 
     doc.setFontSize(12);
     doc.setTextColor('#333333');
@@ -352,7 +352,7 @@ function setupExportButtons() {
         y += 18;
       });
 
-    doc.save('ausschreibungs-analyzer-report.pdf');
+    doc.save('dars-tools-lv-analyzer-report.pdf');
   });
 }
 

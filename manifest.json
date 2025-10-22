@@ -1,10 +1,16 @@
 {
-  "name": "Ausschreibungs-Analyzer Alpha",
-  "short_name": "Analyzer",
+  "name": "Dars Tools",
+  "short_name": "Dars Tools",
   "display": "standalone",
-  "start_url": ".",
-  "background_color": "#FFFFFF",
-  "theme_color": "#003382",
-  "description": "Offline Analyse von PDF-Ausschreibungen im Browser.",
-  "icons": []
+  "start_url": "index.html",
+  "background_color": "#F5F7FB",
+  "theme_color": "#002D70",
+  "description": "Dars Tools – moderne Browser-Tools für das Bauwesen, inklusive LV Analyzer.",
+  "icons": [
+    {
+      "src": "assets/DT_Favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
 }

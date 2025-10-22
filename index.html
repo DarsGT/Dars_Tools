@@ -3,160 +3,173 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LV Analyzer</title>
-    <link rel="stylesheet" href="./styles.css" />
+    <title>Dars Tools</title>
+    <meta
+      name="description"
+      content="Dars Tools – moderne Browser-Tools für das Bauwesen. Entdecke den LV Analyzer und weitere smarte Anwendungen."
+    />
+    <link rel="icon" type="image/png" href="assets/DT_Favicon.png" />
+    <link rel="stylesheet" href="styles/landing.css" />
     <link rel="manifest" href="manifest.json" />
-    <link rel="icon" href="https://dars-online.de/favicon.ico" />
   </head>
   <body>
-    <header class="app-header">
-      <div class="logo-area">
-        <div class="logo-mark">AA</div>
-        <div>
-          <h1>Ausschreibungs-Analyzer Alpha</h1>
-          <p class="subtitle">Smarte PDF-Analyse lokal im Browser</p>
-        </div>
+    <header class="site-header">
+      <div class="header-container">
+        <a class="brand" href="#hero" aria-label="Zurück zum Anfang">
+          <img src="assets/DT_Logo.png" alt="Dars Tools" class="brand-logo" />
+          <div class="brand-copy">
+            <span class="brand-title">Dars Tools</span>
+            <span class="brand-subtitle">Digitale Power für Bauprojekte</span>
+          </div>
+        </a>
+        <nav class="header-nav" aria-label="Hauptnavigation">
+          <a href="#tools">Tools</a>
+          <a href="#benefits">Vorteile</a>
+          <a class="button ghost" href="mailto:hello@dars-tools.app">Kontakt</a>
+        </nav>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobileNav">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Menü öffnen</span>
+        </button>
       </div>
-      <nav class="header-actions">
-        <button id="exportPdf" class="secondary">PDF-Report</button>
-        <button id="exportJson" class="secondary">Export Positionen</button>
-        <label class="import-button secondary">
-          <input type="file" id="importJson" accept="application/json" hidden />
-          <span>Import Positionen</span>
-        </label>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+        <a href="#tools">Tools</a>
+        <a href="#benefits">Vorteile</a>
+        <a href="mailto:hello@dars-tools.app">Kontakt</a>
       </nav>
     </header>
 
-    <main class="layout">
-      <section class="card upload-card" aria-labelledby="upload-title">
-        <div class="card-header">
-          <h2 id="upload-title">PDF Analyse</h2>
-          <p class="card-subtitle">
-            Lade ein Leistungsverzeichnis als PDF hoch. Die Analyse erfolgt vollständig lokal
-            im Browser.
+    <main>
+      <section class="hero" id="hero">
+        <div class="hero-background" aria-hidden="true"></div>
+        <div class="hero-content">
+          <div class="eyebrow">Willkommen bei Dars Tools</div>
+          <h1>Intelligente Browser-Tools für leistungsstarke Bauprozesse</h1>
+          <p>
+            Unsere Anwendungen unterstützen Expert:innen dabei, Leistungsverzeichnisse schneller zu prüfen, Daten zu strukturieren
+            und Projekte smarter zu steuern – direkt im Browser und ohne Installation.
           </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#tools">Tools entdecken</a>
+            <a class="button secondary" href="mailto:hello@dars-tools.app">Demo anfragen</a>
+          </div>
         </div>
-        <div class="upload-area" id="uploadArea">
-          <input type="file" id="pdfFile" accept="application/pdf" />
-          <p>Ziehen Sie eine PDF-Datei hierher oder klicken Sie zum Auswählen.</p>
-          <p class="hint">Unterstützt textbasierte PDFs bis 100 Seiten.</p>
-        </div>
-        <div class="progress" id="analysisProgress" hidden>
-          <div class="progress-bar" id="progressBar"></div>
-          <span id="progressLabel">Analyse läuft...</span>
+        <div class="hero-preview" aria-hidden="true">
+          <div class="preview-card">
+            <h3>LV Analyzer</h3>
+            <p>PDFs prüfen, Positionen erkennen und Relevanzen vergleichen.</p>
+            <div class="preview-pills">
+              <span>lokal</span>
+              <span>smart</span>
+              <span>schnell</span>
+            </div>
+          </div>
+          <div class="preview-bubbles">
+            <span data-label="Analyse">97%</span>
+            <span data-label="Zeitersparnis">4x</span>
+            <span data-label="Zuverlässigkeit">ISO</span>
+          </div>
         </div>
       </section>
 
-      <section class="card overview-card" aria-labelledby="overview-title">
-        <div class="card-header">
-          <h2 id="overview-title">Kurzübersicht</h2>
-          <p class="card-subtitle">Automatisch generierte Zusammenfassung (max. 12 Zeilen)</p>
+      <section class="tools" id="tools" aria-labelledby="tools-title">
+        <div class="section-header">
+          <h2 id="tools-title">Unsere Tools im Überblick</h2>
+          <p>Wähle ein Tool aus, um direkt im Browser loszulegen.</p>
         </div>
-        <ol class="overview-list" id="overviewList"></ol>
-      </section>
-
-      <section class="card results-card" aria-labelledby="results-title">
-        <div class="card-header">
-          <div>
-            <h2 id="results-title">Relevante Positionen</h2>
-            <p class="card-subtitle">Gefundene Positionen mit Relevanzbewertung</p>
+        <div class="tools-grid">
+          <a class="tool-card" href="tools/lv-analyzer.html">
+            <div class="tool-icon">
+              <img src="assets/LV_Analyzer_Icon.svg" alt="LV Analyzer Icon" />
+            </div>
+            <div>
+              <h3>LV Analyzer</h3>
+              <p>Extrahiere Positionen aus Leistungsverzeichnissen und erhalte sofortige Relevanzscores.</p>
+            </div>
+            <span class="tool-tag">Jetzt starten</span>
+          </a>
+          <div class="tool-card disabled" aria-disabled="true">
+            <div class="tool-icon">
+              <img src="assets/New_Tool_Icon.svg" alt="Tool Icon" />
+            </div>
+            <div>
+              <h3>Coming Soon</h3>
+              <p>Weitere Dars Tools sind bereits in Entwicklung. Bleib gespannt auf neue Releases.</p>
+            </div>
+            <span class="tool-tag">Bald verfügbar</span>
           </div>
-          <div class="filters">
-            <label>
-              <span>Min. Score</span>
-              <input type="number" id="minScore" min="0" max="100" step="5" value="30" />
-            </label>
-            <label class="toggle">
-              <input type="checkbox" id="showAll" />
-              <span>Alle Positionen anzeigen</span>
-            </label>
+          <div class="tool-card disabled" aria-disabled="true">
+            <div class="tool-icon">
+              <img src="assets/New_Tool_Icon.svg" alt="Tool Icon" />
+            </div>
+            <div>
+              <h3>Dein Wunsch-Tool</h3>
+              <p>Du hast konkrete Anforderungen? Sprich uns an und wir entwickeln dein individuelles Tool.</p>
+            </div>
+            <span class="tool-tag">In Planung</span>
           </div>
-        </div>
-        <div class="table-wrapper">
-          <table>
-            <thead>
-              <tr>
-                <th>Pos.-Nr.</th>
-                <th>Kurztext</th>
-                <th>Einheit</th>
-                <th>Menge</th>
-                <th>Langtext</th>
-                <th>Seite</th>
-                <th>Score</th>
-              </tr>
-            </thead>
-            <tbody id="resultsBody"></tbody>
-          </table>
         </div>
       </section>
 
-      <section class="card manager-card" aria-labelledby="manager-title">
-        <div class="card-header">
-          <div>
-            <h2 id="manager-title">Positions-Manager</h2>
-            <p class="card-subtitle">Pflege relevanter Positionen &amp; Keywords</p>
+      <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h2 id="benefits-title">Warum Dars Tools?</h2>
+            <p>
+              Wir kombinieren Branchenwissen mit moderner Webtechnologie. Alle Anwendungen laufen vollständig lokal im Browser,
+              ohne Datenupload und ohne Installationsaufwand.
+            </p>
+            <a class="button inline" href="mailto:hello@dars-tools.app">Projekt besprechen</a>
           </div>
-          <button id="newPosition" class="primary">Neue Position</button>
-        </div>
-        <div class="manager-layout">
-          <aside class="manager-list">
-            <ul id="positionList"></ul>
-          </aside>
-          <form id="positionForm" class="manager-form" autocomplete="off">
-            <input type="hidden" id="positionId" />
-            <div class="form-row">
-              <label for="positionName">Name</label>
-              <input id="positionName" required />
-            </div>
-            <div class="form-row">
-              <label for="positionSynonyms">Synonyme <span class="hint-inline">(Komma getrennt)</span></label>
-              <input id="positionSynonyms" />
-            </div>
-            <div class="form-row">
-              <label for="positionDescription">Beschreibung</label>
-              <textarea id="positionDescription" rows="3"></textarea>
-            </div>
-            <div class="form-row split">
-              <label>
-                <span>Standard-Einheit</span>
-                <input id="positionUnit" placeholder="z. B. m²" />
-              </label>
-              <label>
-                <span>Ausschlüsse <span class="hint-inline">(Komma getrennt)</span></span>
-                <input id="positionExclusions" />
-              </label>
-            </div>
-            <div class="form-row checkbox-row">
-              <label class="toggle">
-                <input type="checkbox" id="positionActive" checked />
-                <span>Aktiv in Analyse berücksichtigen</span>
-              </label>
-            </div>
-            <div class="form-actions">
-              <button type="submit" class="primary" id="savePosition">Speichern</button>
-              <button type="button" id="deletePosition" class="danger">Löschen</button>
-              <button type="button" id="resetForm" class="secondary">Zurücksetzen</button>
-            </div>
-          </form>
+          <ul class="benefit-list">
+            <li>
+              <h3>Datensouverän</h3>
+              <p>Deine Daten verlassen niemals den Browser – ideal für sensible Ausschreibungsunterlagen.</p>
+            </li>
+            <li>
+              <h3>Performance-optimiert</h3>
+              <p>Web-Worker, Caching und moderne UX sorgen für schnelle Ergebnisse in jeder Projektphase.</p>
+            </li>
+            <li>
+              <h3>Erweiterbar</h3>
+              <p>Unsere Architektur erlaubt es, neue Tools und Features schnell zu ergänzen.</p>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
 
-    <footer class="app-footer">
-      <small>&copy; 2025 PlanCraft – Ausschreibungs-Analyzer Alpha (Frontend-Preview)</small>
+    <footer class="site-footer">
+      <div class="footer-content">
+        <div class="footer-brand">
+          <img src="assets/DT_Logo.png" alt="Dars Tools" />
+          <p>© 2025 Dars Tools. Smarte Browser-Tools für das Bauwesen.</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:hello@dars-tools.app">Kontakt</a>
+          <a href="#tools">Tools</a>
+          <a href="#hero">Nach oben</a>
+        </div>
+      </div>
     </footer>
 
-    <dialog id="modal" class="modal">
-      <form method="dialog">
-        <h3 id="modalTitle"></h3>
-        <p id="modalMessage"></p>
-        <menu>
-          <button value="cancel">Abbrechen</button>
-          <button id="modalConfirm" value="confirm" class="primary">Bestätigen</button>
-        </menu>
-      </form>
-    </dialog>
+    <script>
+      const toggle = document.querySelector('.menu-toggle');
+      const mobileNav = document.getElementById('mobileNav');
+      toggle.addEventListener('click', () => {
+        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+        mobileNav.classList.toggle('open');
+      });
 
-    <script type="module" src="./src/main.js"></script>
+      mobileNav.querySelectorAll('a').forEach((link) => {
+        link.addEventListener('click', () => {
+          mobileNav.classList.remove('open');
+          toggle.setAttribute('aria-expanded', 'false');
+        });
+      });
+    </script>
   </body>
 </html>

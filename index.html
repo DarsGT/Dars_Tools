@@ -4,11 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dars Tools</title>
+
+    <!-- Meta -->
     <meta
       name="description"
-      content="Dars Tools – intelligente Browser-Tools für leistungsstarke Bauprozesse. Entdecken Sie den LV Analyzer und weitere smarte Anwendungen."
+      content="Dars Tools – moderne Browser-Tools für das Bauwesen. Entdecke den LV Analyzer und weitere smarte Anwendungen."
     />
     <meta name="theme-color" content="#003382" />
+
+    <!-- Assets -->
     <link rel="icon" type="image/png" href="assets/DT_Favicon.png" />
     <link rel="stylesheet" href="styles/landing.css" />
     <link rel="manifest" href="manifest.json" />
@@ -16,27 +20,69 @@
   <body>
     <header class="site-header">
       <div class="header-container">
-        <a class="brand" href="index.html" aria-label="Dars Tools Startseite">
-          <img src="assets/DT_Logo.png" alt="Dars Tools" />
+        <a class="brand" href="#hero" aria-label="Zurück zum Anfang">
+          <img src="assets/DT_Logo.png" alt="Dars Tools" class="brand-logo" />
+          <div class="brand-copy">
+            <span class="brand-title">Dars Tools</span>
+            <span class="brand-subtitle">Digitale Power für Bauprojekte</span>
+          </div>
         </a>
+        <nav class="header-nav" aria-label="Hauptnavigation">
+          <a href="#tools">Tools</a>
+          <a href="#benefits">Vorteile</a>
+          <a class="button ghost" href="mailto:hello@dars-tools.app">Kontakt</a>
+        </nav>
+        <button class="menu-toggle" aria-expanded="false" aria-controls="mobileNav">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span class="sr-only">Menü öffnen</span>
+        </button>
       </div>
+      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
+        <a href="#tools">Tools</a>
+        <a href="#benefits">Vorteile</a>
+        <a href="mailto:hello@dars-tools.app">Kontakt</a>
+      </nav>
     </header>
 
     <main id="main-content">
       <section class="hero" id="hero">
+        <div class="hero-background" aria-hidden="true"></div>
         <div class="hero-content">
+          <div class="eyebrow">Willkommen bei Dars Tools</div>
           <h1>Intelligente Browser-Tools für leistungsstarke Bauprozesse</h1>
           <p>
-            Unsere Anwendungen unterstützen Sie dabei, Leistungsverzeichnisse schneller zu prüfen, Daten zu strukturieren und
-            Projekte smarter zu steuern – direkt im Browser und ohne Installation.
+            Unsere Anwendungen unterstützen dich dabei, Leistungsverzeichnisse schneller zu prüfen, Daten zu strukturieren
+            und Projekte smarter zu steuern – direkt im Browser und ohne Installation.
           </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#tools">Tools entdecken</a>
+            <a class="button secondary" href="mailto:hello@dars-tools.app">Demo anfragen</a>
+          </div>
+        </div>
+        <div class="hero-preview" aria-hidden="true">
+          <div class="preview-card">
+            <h3>LV Analyzer</h3>
+            <p>PDFs prüfen, Positionen erkennen und Relevanzen vergleichen.</p>
+            <div class="preview-pills">
+              <span>lokal</span>
+              <span>smart</span>
+              <span>schnell</span>
+            </div>
+          </div>
+          <div class="preview-bubbles">
+            <span data-label="Analyse">97%</span>
+            <span data-label="Zeitersparnis">4x</span>
+            <span data-label="Zuverlässigkeit">ISO</span>
+          </div>
         </div>
       </section>
 
       <section class="tools" id="tools" aria-labelledby="tools-title">
         <div class="section-header">
           <h2 id="tools-title">Unsere Tools im Überblick</h2>
-          <p>Wählen Sie ein Tool aus, um direkt im Browser zu starten.</p>
+          <p>Wähle ein Tool aus, um direkt im Browser loszulegen.</p>
         </div>
         <div class="tools-grid">
           <a class="tool-card" href="tools/lv-analyzer.html">
@@ -45,44 +91,99 @@
             </div>
             <div>
               <h3>LV Analyzer</h3>
-              <p>Extrahieren Sie Positionen aus Leistungsverzeichnissen und erhalten Sie sofortige Relevanzscores.</p>
+              <p>Extrahiere Positionen aus Leistungsverzeichnissen und erhalte sofortige Relevanzscores.</p>
             </div>
             <span class="tool-tag">Jetzt starten</span>
           </a>
+
           <div class="tool-card disabled" aria-disabled="true">
             <div class="tool-icon">
-              <img src="assets/New_Tool_Icon.svg" alt="Icon für weitere Tools" />
+              <img src="assets/New_Tool_Icon.svg" alt="Tool Icon" />
             </div>
             <div>
               <h3>Coming Soon</h3>
-              <p>Weitere Dars Tools befinden sich in Entwicklung. Bleiben Sie über neue Releases informiert.</p>
+              <p>Weitere Dars Tools sind bereits in Entwicklung. Bleib gespannt auf neue Releases.</p>
             </div>
             <span class="tool-tag">Bald verfügbar</span>
           </div>
+
           <div class="tool-card disabled" aria-disabled="true">
             <div class="tool-icon">
-              <img src="assets/New_Tool_Icon.svg" alt="Icon für weitere Tools" />
+              <img src="assets/New_Tool_Icon.svg" alt="Tool Icon" />
             </div>
             <div>
-              <h3>Ihr Wunsch-Tool</h3>
-              <p>Sie haben konkrete Anforderungen? Sprechen Sie uns an – wir entwickeln das passende Tool.</p>
+              <h3>Dein Wunsch-Tool</h3>
+              <p>Du hast konkrete Anforderungen? Sprich uns an und wir entwickeln dein individuelles Tool.</p>
             </div>
             <span class="tool-tag">In Planung</span>
           </div>
+        </div>
+      </section>
+
+      <section class="benefits" id="benefits" aria-labelledby="benefits-title">
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <h2 id="benefits-title">Warum Dars Tools?</h2>
+            <p>
+              Wir kombinieren Branchenwissen mit moderner Webtechnologie. Alle Anwendungen laufen vollständig lokal im Browser,
+              ohne Datenupload und ohne Installationsaufwand.
+            </p>
+            <a class="button inline" href="mailto:hello@dars-tools.app">Projekt besprechen</a>
+          </div>
+          <ul class="benefit-list">
+            <li>
+              <h3>Datensouverän</h3>
+              <p>Deine Daten verlassen niemals den Browser – ideal für sensible Ausschreibungsunterlagen.</p>
+            </li>
+            <li>
+              <h3>Performance-optimiert</h3>
+              <p>Web-Worker, Caching und moderne UX sorgen für schnelle Ergebnisse in jeder Projektphase.</p>
+            </li>
+            <li>
+              <h3>Erweiterbar</h3>
+              <p>Unsere Architektur erlaubt es, neue Tools und Features schnell zu ergänzen.</p>
+            </li>
+          </ul>
         </div>
       </section>
     </main>
 
     <footer class="site-footer">
       <div class="footer-content">
-        <p>
-          © 2025 DARS Gebaudetechnik GmbH
-          <span aria-hidden="true"> | </span>
+        <div class="footer-brand">
+          <img src="assets/DT_Logo.png" alt="Dars Tools" />
+          <p>© 2025 Dars Tools. Smarte Browser-Tools für das Bauwesen.</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:hello@dars-tools.app">Kontakt</a>
+          <a href="#tools">Tools</a>
+          <a href="#hero">Nach oben</a>
+          <!-- Optional rechtlich, falls gewünscht:
           <a href="https://dars-online.de/impressum/" target="_blank" rel="noopener">Impressum</a>
-          <span aria-hidden="true"> | </span>
           <a href="https://dars-online.de/datenschutzerklaerung/" target="_blank" rel="noopener">Datenschutz</a>
-        </p>
+          -->
+        </div>
       </div>
     </footer>
+
+    <script>
+      const toggle = document.querySelector('.menu-toggle');
+      const mobileNav = document.getElementById('mobileNav');
+
+      if (toggle && mobileNav) {
+        toggle.addEventListener('click', () => {
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!isOpen));
+          mobileNav.classList.toggle('open');
+        });
+
+        mobileNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
+    </script>
   </body>
 </html>

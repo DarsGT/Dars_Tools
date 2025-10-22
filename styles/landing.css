@@ -1,9 +1,14 @@
+/* ==============================
+   Dars Tools – Landing Styles
+   ============================== */
+
 :root {
   color-scheme: light;
-  --background: #f5f7fb;
+  /* CI / Theme */
+  --background: #F5F7FB;
   --surface: #ffffff;
-  --primary: #002d70;
-  --primary-accent: #0065ff;
+  --primary: #003382;          /* CI Blau */
+  --primary-accent: #0065ff;   /* Akzent/Hover */
   --text: #1a1f2b;
   --muted: #4b5568;
   --border: rgba(0, 34, 79, 0.12);
@@ -11,11 +16,14 @@
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 12px;
-  font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+  font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background-color: var(--background);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -25,6 +33,7 @@ body {
   padding: 0;
   background: var(--background);
   color: var(--text);
+  text-rendering: optimizeLegibility;
 }
 
 a {
@@ -35,7 +44,16 @@ a {
 a:hover,
 a:focus-visible {
   color: var(--primary-accent);
+  outline: none;
 }
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Header / Navigation ===== */
 
 .site-header {
   position: sticky;
@@ -97,7 +115,7 @@ a:focus-visible {
 }
 
 .header-nav a::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -0.35rem;
@@ -113,6 +131,8 @@ a:focus-visible {
 .header-nav a:focus-visible::after {
   transform: scaleX(1);
 }
+
+/* Buttons */
 
 .button {
   display: inline-flex;
@@ -165,6 +185,8 @@ a:focus-visible {
   background: rgba(0, 45, 112, 0.1);
 }
 
+/* Mobile Menu */
+
 .menu-toggle {
   display: none;
   flex-direction: column;
@@ -211,6 +233,8 @@ a:focus-visible {
   display: flex;
 }
 
+/* ===== Hero ===== */
+
 .hero {
   position: relative;
   width: min(1120px, 92vw);
@@ -228,7 +252,8 @@ a:focus-visible {
 .hero-background {
   position: absolute;
   inset: 0;
-  background: radial-gradient(circle at top left, rgba(0, 101, 255, 0.25), transparent 50%),
+  background:
+    radial-gradient(circle at top left, rgba(0, 101, 255, 0.25), transparent 50%),
     radial-gradient(circle at bottom right, rgba(0, 45, 112, 0.2), transparent 50%);
   mix-blend-mode: screen;
   pointer-events: none;
@@ -338,6 +363,12 @@ a:focus-visible {
   display: block;
 }
 
+/* ===== Tools ===== */
+
+.tools {
+  padding: 1rem 0 3rem;
+}
+
 .section-header {
   width: min(1120px, 92vw);
   margin: 0 auto 2rem;
@@ -355,10 +386,6 @@ a:focus-visible {
   margin: 0;
   color: var(--muted);
   font-size: 1rem;
-}
-
-.tools {
-  padding: 1rem 0 3rem;
 }
 
 .tools-grid {
@@ -393,12 +420,6 @@ a:focus-visible {
   pointer-events: none;
 }
 
-.tool-card.disabled:hover {
-  transform: none;
-  box-shadow: 0 16px 40px rgba(0, 37, 86, 0.12);
-  border-color: transparent;
-}
-
 .tool-icon img {
   width: 56px;
   height: 56px;
@@ -424,6 +445,8 @@ a:focus-visible {
   border-radius: 999px;
   justify-self: flex-start;
 }
+
+/* ===== Benefits ===== */
 
 .benefits {
   padding: 3rem 0 4rem;
@@ -479,9 +502,11 @@ a:focus-visible {
   line-height: 1.5;
 }
 
+/* ===== Footer ===== */
+
 .site-footer {
   padding: 2.5rem 0;
-  background: #0c1b3c;
+  background: #0c1b3c; /* dunkles Blau passend zur CI */
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -526,20 +551,19 @@ a:focus-visible {
   color: #ffffff;
 }
 
+/* ===== Responsive ===== */
+
 @media (max-width: 860px) {
   .header-nav {
     display: none;
   }
-
   .menu-toggle {
     display: flex;
   }
-
   .hero {
     grid-template-columns: 1fr;
     justify-items: flex-start;
   }
-
   .hero-preview {
     justify-items: start;
   }
@@ -549,12 +573,13 @@ a:focus-visible {
   .preview-bubbles {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
-
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
   }
 }
+
+/* ===== Accessibility: Motion ===== */
 
 @media (prefers-reduced-motion: reduce) {
   *,

@@ -4,10 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dars Tools</title>
+
+    <!-- Meta -->
     <meta
       name="description"
       content="Dars Tools – moderne Browser-Tools für das Bauwesen. Entdecke den LV Analyzer und weitere smarte Anwendungen."
     />
+    <meta name="theme-color" content="#003382" />
+
+    <!-- Assets -->
     <link rel="icon" type="image/png" href="assets/DT_Favicon.png" />
     <link rel="stylesheet" href="styles/landing.css" />
     <link rel="manifest" href="manifest.json" />
@@ -41,14 +46,14 @@
       </nav>
     </header>
 
-    <main>
+    <main id="main-content">
       <section class="hero" id="hero">
         <div class="hero-background" aria-hidden="true"></div>
         <div class="hero-content">
           <div class="eyebrow">Willkommen bei Dars Tools</div>
           <h1>Intelligente Browser-Tools für leistungsstarke Bauprozesse</h1>
           <p>
-            Unsere Anwendungen unterstützen Expert:innen dabei, Leistungsverzeichnisse schneller zu prüfen, Daten zu strukturieren
+            Unsere Anwendungen unterstützen dich dabei, Leistungsverzeichnisse schneller zu prüfen, Daten zu strukturieren
             und Projekte smarter zu steuern – direkt im Browser und ohne Installation.
           </p>
           <div class="hero-actions">
@@ -90,6 +95,7 @@
             </div>
             <span class="tool-tag">Jetzt starten</span>
           </a>
+
           <div class="tool-card disabled" aria-disabled="true">
             <div class="tool-icon">
               <img src="assets/New_Tool_Icon.svg" alt="Tool Icon" />
@@ -100,6 +106,7 @@
             </div>
             <span class="tool-tag">Bald verfügbar</span>
           </div>
+
           <div class="tool-card disabled" aria-disabled="true">
             <div class="tool-icon">
               <img src="assets/New_Tool_Icon.svg" alt="Tool Icon" />
@@ -151,6 +158,10 @@
           <a href="mailto:hello@dars-tools.app">Kontakt</a>
           <a href="#tools">Tools</a>
           <a href="#hero">Nach oben</a>
+          <!-- Optional rechtlich, falls gewünscht:
+          <a href="https://dars-online.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+          <a href="https://dars-online.de/datenschutzerklaerung/" target="_blank" rel="noopener">Datenschutz</a>
+          -->
         </div>
       </div>
     </footer>
@@ -158,18 +169,21 @@
     <script>
       const toggle = document.querySelector('.menu-toggle');
       const mobileNav = document.getElementById('mobileNav');
-      toggle.addEventListener('click', () => {
-        const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-        toggle.setAttribute('aria-expanded', String(!isOpen));
-        mobileNav.classList.toggle('open');
-      });
 
-      mobileNav.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-          mobileNav.classList.remove('open');
-          toggle.setAttribute('aria-expanded', 'false');
+      if (toggle && mobileNav) {
+        toggle.addEventListener('click', () => {
+          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+          toggle.setAttribute('aria-expanded', String(!isOpen));
+          mobileNav.classList.toggle('open');
         });
-      });
+
+        mobileNav.querySelectorAll('a').forEach((link) => {
+          link.addEventListener('click', () => {
+            mobileNav.classList.remove('open');
+            toggle.setAttribute('aria-expanded', 'false');
+          });
+        });
+      }
     </script>
   </body>
 </html>

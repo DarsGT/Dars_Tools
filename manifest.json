@@ -1,11 +1,13 @@
 {
   "name": "Dars Tools",
   "short_name": "Dars Tools",
+  "lang": "de-DE",
   "display": "standalone",
-  "start_url": "index.html",
+  "scope": "./",
+  "start_url": "./index.html",
   "background_color": "#F5F7FB",
-  "theme_color": "#002D70",
-  "description": "Dars Tools – moderne Browser-Tools für das Bauwesen, inklusive LV Analyzer.",
+  "theme_color": "#003382",
+  "description": "Dars Tools – moderne Browser-Tools für das Bauwesen. Entdecke den LV Analyzer und weitere smarte Anwendungen.",
   "icons": [
     {
       "src": "assets/DT_Favicon.png",

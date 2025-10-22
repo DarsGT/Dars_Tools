@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ausschreibungs-Analyzer Alpha</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="manifest" href="manifest.json" />
+  </head>
+  <body>
+    <header class="app-header">
+      <div class="logo-area">
+        <div class="logo-mark">AA</div>
+        <div>
+          <h1>Ausschreibungs-Analyzer Alpha</h1>
+          <p class="subtitle">Smarte PDF-Analyse lokal im Browser</p>
+        </div>
+      </div>
+      <nav class="header-actions">
+        <button id="exportPdf" class="secondary">PDF-Report</button>
+        <button id="exportJson" class="secondary">Export Positionen</button>
+        <label class="import-button secondary">
+          <input type="file" id="importJson" accept="application/json" hidden />
+          <span>Import Positionen</span>
+        </label>
+      </nav>
+    </header>
+
+    <main class="layout">
+      <section class="card upload-card" aria-labelledby="upload-title">
+        <div class="card-header">
+          <h2 id="upload-title">PDF Analyse</h2>
+          <p class="card-subtitle">
+            Lade ein Leistungsverzeichnis als PDF hoch. Die Analyse erfolgt vollständig lokal
+            im Browser.
+          </p>
+        </div>
+        <div class="upload-area" id="uploadArea">
+          <input type="file" id="pdfFile" accept="application/pdf" />
+          <p>Ziehen Sie eine PDF-Datei hierher oder klicken Sie zum Auswählen.</p>
+          <p class="hint">Unterstützt textbasierte PDFs bis 100 Seiten.</p>
+        </div>
+        <div class="progress" id="analysisProgress" hidden>
+          <div class="progress-bar" id="progressBar"></div>
+          <span id="progressLabel">Analyse läuft...</span>
+        </div>
+      </section>
+
+      <section class="card overview-card" aria-labelledby="overview-title">
+        <div class="card-header">
+          <h2 id="overview-title">Kurzübersicht</h2>
+          <p class="card-subtitle">Automatisch generierte Zusammenfassung (max. 12 Zeilen)</p>
+        </div>
+        <ol class="overview-list" id="overviewList"></ol>
+      </section>
+
+      <section class="card results-card" aria-labelledby="results-title">
+        <div class="card-header">
+          <div>
+            <h2 id="results-title">Relevante Positionen</h2>
+            <p class="card-subtitle">Gefundene Positionen mit Relevanzbewertung</p>
+          </div>
+          <div class="filters">
+            <label>
+              <span>Min. Score</span>
+              <input type="number" id="minScore" min="0" max="100" step="5" value="30" />
+            </label>
+            <label class="toggle">
+              <input type="checkbox" id="showAll" />
+              <span>Alle Positionen anzeigen</span>
+            </label>
+          </div>
+        </div>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Pos.-Nr.</th>
+                <th>Kurztext</th>
+                <th>Einheit</th>
+                <th>Menge</th>
+                <th>Langtext</th>
+                <th>Seite</th>
+                <th>Score</th>
+              </tr>
+            </thead>
+            <tbody id="resultsBody"></tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="card manager-card" aria-labelledby="manager-title">
+        <div class="card-header">
+          <div>
+            <h2 id="manager-title">Positions-Manager</h2>
+            <p class="card-subtitle">Pflege relevanter Positionen &amp; Keywords</p>
+          </div>
+          <button id="newPosition" class="primary">Neue Position</button>
+        </div>
+        <div class="manager-layout">
+          <aside class="manager-list">
+            <ul id="positionList"></ul>
+          </aside>
+          <form id="positionForm" class="manager-form" autocomplete="off">
+            <input type="hidden" id="positionId" />
+            <div class="form-row">
+              <label for="positionName">Name</label>
+              <input id="positionName" required />
+            </div>
+            <div class="form-row">
+              <label for="positionSynonyms">Synonyme <span class="hint-inline">(Komma getrennt)</span></label>
+              <input id="positionSynonyms" />
+            </div>
+            <div class="form-row">
+              <label for="positionDescription">Beschreibung</label>
+              <textarea id="positionDescription" rows="3"></textarea>
+            </div>
+            <div class="form-row split">
+              <label>
+                <span>Standard-Einheit</span>
+                <input id="positionUnit" placeholder="z. B. m²" />
+              </label>
+              <label>
+                <span>Ausschlüsse <span class="hint-inline">(Komma getrennt)</span></span>
+                <input id="positionExclusions" />
+              </label>
+            </div>
+            <div class="form-row checkbox-row">
+              <label class="toggle">
+                <input type="checkbox" id="positionActive" checked />
+                <span>Aktiv in Analyse berücksichtigen</span>
+              </label>
+            </div>
+            <div class="form-actions">
+              <button type="submit" class="primary" id="savePosition">Speichern</button>
+              <button type="button" id="deletePosition" class="danger">Löschen</button>
+              <button type="button" id="resetForm" class="secondary">Zurücksetzen</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <small>&copy; 2025 PlanCraft – Ausschreibungs-Analyzer Alpha (Frontend-Preview)</small>
+    </footer>
+
+    <dialog id="modal" class="modal">
+      <form method="dialog">
+        <h3 id="modalTitle"></h3>
+        <p id="modalMessage"></p>
+        <menu>
+          <button value="cancel">Abbrechen</button>
+          <button id="modalConfirm" value="confirm" class="primary">Bestätigen</button>
+        </menu>
+      </form>
+    </dialog>
+
+    <script type="module" src="./src/main.js"></script>
+  </body>
+</html>

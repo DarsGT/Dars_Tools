@@ -1,0 +1,10 @@
+{
+  "name": "Ausschreibungs-Analyzer Alpha",
+  "short_name": "Analyzer",
+  "display": "standalone",
+  "start_url": ".",
+  "background_color": "#FFFFFF",
+  "theme_color": "#003382",
+  "description": "Offline Analyse von PDF-Ausschreibungen im Browser.",
+  "icons": []
+}

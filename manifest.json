@@ -1,8 +1,10 @@
 {
   "name": "Dars Tools",
   "short_name": "Dars Tools",
+  "lang": "de-DE",
   "display": "standalone",
-  "start_url": "index.html",
+  "scope": "./",
+  "start_url": "./index.html",
   "background_color": "#edeff2",
   "theme_color": "#003382",
   "description": "Dars Tools – intelligente Browser-Tools für leistungsstarke Bauprozesse.",

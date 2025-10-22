@@ -4,6 +4,7 @@
   --grey: #edeff2;
   --white: #ffffff;
   --text: #000000;
+  --divider: rgba(0, 0, 0, 0.06);
   font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
 }
 
@@ -21,6 +22,7 @@ body {
   line-height: 1.6;
   display: flex;
   flex-direction: column;
+  text-rendering: optimizeLegibility;
 }
 
 img {
@@ -34,9 +36,9 @@ a {
   text-decoration: none;
 }
 
-a:hover,
 a:focus-visible {
-  text-decoration: underline;
+  outline: 2px solid var(--blue);
+  outline-offset: 4px;
 }
 
 main {
@@ -48,13 +50,14 @@ main {
   position: sticky;
   top: 0;
   z-index: 20;
-  border-bottom: 1px solid var(--grey);
+  border-bottom: 1px solid var(--divider);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
 }
 
 .header-container {
   max-width: 1120px;
   margin: 0 auto;
-  padding: 0.75rem 1.5rem;
+  padding: clamp(0.75rem, 1.2vw, 1.25rem) 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -66,12 +69,17 @@ main {
 }
 
 .brand img {
-  height: 48px;
+  height: clamp(44px, 4vw, 56px);
   width: auto;
 }
 
 .hero {
-  padding: 72px 1.5rem 28px;
+  padding: clamp(3.25rem, 8vw, 4.5rem) 1.5rem clamp(1.75rem, 4vw, 2.5rem);
+}
+
+.hero-content {
+  margin: 0 auto;
+  max-width: 760px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -79,16 +87,9 @@ main {
   text-align: center;
 }
 
-.hero-content {
-  max-width: 760px;
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
 .hero h1 {
   margin: 0;
-  font-size: clamp(2rem, 3.2vw + 1rem, 3rem);
+  font-size: clamp(2.1rem, 3vw + 1.2rem, 3.15rem);
   color: var(--blue);
   line-height: 1.2;
 }
@@ -99,7 +100,7 @@ main {
 }
 
 .tools {
-  padding: 20px 1.5rem 128px;
+  padding: clamp(1.5rem, 4vw, 2.75rem) 1.5rem clamp(4rem, 10vw, 6.5rem);
 }
 
 .section-header {
@@ -114,7 +115,7 @@ main {
 .section-header h2 {
   margin: 0;
   color: var(--blue);
-  font-size: clamp(1.75rem, 1.3vw + 1.5rem, 2.5rem);
+  font-size: clamp(1.9rem, 1.6vw + 1.45rem, 2.65rem);
 }
 
 .section-header p {
@@ -126,26 +127,25 @@ main {
   max-width: 1120px;
   margin-inline: auto;
   display: grid;
-  gap: 1.5rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: clamp(1.25rem, 2vw, 1.75rem);
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .tool-card {
   background: var(--white);
-  border-radius: 16px;
-  padding: 1.75rem;
+  border-radius: 18px;
+  padding: clamp(1.5rem, 2.2vw, 2rem);
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
-  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 1px solid var(--divider);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+  transition: box-shadow 160ms ease, border-color 160ms ease;
   height: 100%;
 }
 
-.tool-card:hover,
-.tool-card:focus-visible {
-  box-shadow: 0 12px 28px rgba(0, 51, 130, 0.18);
+.tool-card:hover {
+  box-shadow: 0 16px 32px rgba(0, 51, 130, 0.18);
   border-color: rgba(0, 51, 130, 0.35);
 }
 
@@ -181,6 +181,7 @@ main {
   cursor: default;
   box-shadow: none;
   border-color: rgba(0, 0, 0, 0.08);
+  pointer-events: none;
 }
 
 .site-footer {
@@ -210,8 +211,12 @@ main {
   color: var(--white);
 }
 
+.footer-content a:hover {
+  text-decoration: underline;
+}
+
 .page-intro {
-  padding: 100px 1.5rem 40px;
+  padding: clamp(4.25rem, 10vw, 5.5rem) 1.5rem clamp(2.5rem, 6vw, 3.5rem);
   display: flex;
   flex-direction: column;
   gap: 1rem;
@@ -222,7 +227,7 @@ main {
 .page-intro h1 {
   margin: 0;
   color: var(--blue);
-  font-size: clamp(2rem, 2vw + 1.6rem, 2.75rem);
+  font-size: clamp(2rem, 2.4vw + 1.5rem, 3rem);
 }
 
 .page-intro p {
@@ -231,28 +236,42 @@ main {
 }
 
 @media (max-width: 640px) {
+  .header-container {
+    padding-inline: 1rem;
+  }
+
   .brand img {
     height: 40px;
   }
 
   .hero {
-    padding: 64px 1.25rem 24px;
+    padding: 3rem 1.25rem 1.75rem;
   }
 
   .hero p {
     font-size: 1rem;
   }
 
-  .header-container {
-    padding-inline: 1rem;
-  }
-
   .tools {
-    padding-inline: 1rem;
-    padding-bottom: 96px;
+    padding: 1.5rem 1.25rem 4.5rem;
   }
 
   .footer-content {
-    padding-inline: 1rem;
+    padding-inline: 1.25rem;
+  }
+
+  .page-intro {
+    padding: 3.5rem 1.25rem 2.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }

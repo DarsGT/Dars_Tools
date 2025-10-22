@@ -15,14 +15,14 @@
   </head>
   <body>
     <header class="app-header">
-      <a class="brand" href="../index.html">
+      <a class="brand" href="../index.html" aria-label="Zur Startseite">
         <img src="../assets/DT_Logo.png" alt="Dars Tools" />
         <div>
           <h1>Dars Tools</h1>
           <p class="subtitle">LV Analyzer – smarte PDF-Analyse lokal im Browser</p>
         </div>
       </a>
-      <nav class="header-actions">
+      <nav class="header-actions" aria-label="Aktionen">
         <button id="exportPdf" class="secondary">PDF-Report</button>
         <button id="exportJson" class="secondary">Export Positionen</button>
         <label class="import-button secondary">
@@ -32,17 +32,17 @@
       </nav>
     </header>
 
-    <main class="layout">
+    <main class="layout" id="main-content">
       <section class="card upload-card" aria-labelledby="upload-title">
         <div class="card-header">
           <h2 id="upload-title">PDF Analyse</h2>
           <p class="card-subtitle">
-            Lade ein Leistungsverzeichnis als PDF hoch. Die Analyse erfolgt vollständig lokal im Browser – Deine Daten bleiben bei dir.
+            Lade ein Leistungsverzeichnis als PDF hoch. Die Analyse erfolgt vollständig lokal im Browser – deine Daten bleiben bei dir.
           </p>
         </div>
         <div class="upload-area" id="uploadArea">
           <input type="file" id="pdfFile" accept="application/pdf" />
-          <p>Ziehen Sie eine PDF-Datei hierher oder klicken Sie zum Auswählen.</p>
+          <p>Ziehe eine PDF-Datei hierher oder klicke zum Auswählen.</p>
           <p class="hint">Unterstützt textbasierte PDFs bis 100 Seiten.</p>
         </div>
         <div class="progress" id="analysisProgress" hidden>
@@ -103,7 +103,7 @@
           <button id="newPosition" class="primary">Neue Position</button>
         </div>
         <div class="manager-layout">
-          <aside class="manager-list">
+          <aside class="manager-list" aria-label="Positionen">
             <ul id="positionList"></ul>
           </aside>
           <form id="positionForm" class="manager-form" autocomplete="off">
@@ -150,7 +150,7 @@
       <small>&copy; 2025 Dars Tools – LV Analyzer</small>
     </footer>
 
-    <dialog id="modal" class="modal">
+    <dialog id="modal" class="modal" aria-labelledby="modalTitle">
       <form method="dialog">
         <h3 id="modalTitle"></h3>
         <p id="modalMessage"></p>

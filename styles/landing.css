@@ -57,7 +57,7 @@ main {
 .header-container {
   max-width: 1120px;
   margin: 0 auto;
-  padding: clamp(0.75rem, 1.2vw, 1.25rem) 1.5rem;
+  padding: clamp(0.6rem, 1vw, 0.9rem) 1.5rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,21 +69,21 @@ main {
 }
 
 .brand img {
-  height: clamp(44px, 4vw, 56px);
+  height: clamp(40px, 3.2vw, 52px);
   width: auto;
 }
 
 .hero {
-  padding: clamp(3.25rem, 8vw, 4.5rem) 1.5rem clamp(1.75rem, 4vw, 2.5rem);
+  padding: clamp(2.25rem, 6vw, 3.25rem) 1.5rem clamp(1.5rem, 3vw, 2.25rem);
 }
 
 .hero-content {
   margin: 0 auto;
-  max-width: 760px;
+  max-width: 720px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.25rem;
+  gap: 1.1rem;
   text-align: center;
 }
 
@@ -99,8 +99,9 @@ main {
   font-size: 1.1rem;
 }
 
+
 .tools {
-  padding: clamp(1.5rem, 4vw, 2.75rem) 1.5rem clamp(4rem, 10vw, 6.5rem);
+  padding: clamp(1.25rem, 3vw, 2.25rem) 1.5rem clamp(4.5rem, 10vw, 6.75rem);
 }
 
 .section-header {
@@ -123,7 +124,7 @@ main {
 }
 
 .tools-grid {
-  margin-top: 1.75rem;
+  margin-top: clamp(1.1rem, 2.5vw, 1.5rem);
   max-width: 1120px;
   margin-inline: auto;
   display: grid;

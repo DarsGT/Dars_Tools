@@ -22,28 +22,8 @@
       <div class="header-container">
         <a class="brand" href="#hero" aria-label="Zurück zum Anfang">
           <img src="assets/DT_Logo.png" alt="Dars Tools" class="brand-logo" />
-          <div class="brand-copy">
-            <span class="brand-title">Dars Tools</span>
-            <span class="brand-subtitle">Digitale Power für Bauprojekte</span>
-          </div>
         </a>
-        <nav class="header-nav" aria-label="Hauptnavigation">
-          <a href="#tools">Tools</a>
-          <a href="#benefits">Vorteile</a>
-          <a class="button ghost" href="mailto:hello@dars-tools.app">Kontakt</a>
-        </nav>
-        <button class="menu-toggle" aria-expanded="false" aria-controls="mobileNav">
-          <span></span>
-          <span></span>
-          <span></span>
-          <span class="sr-only">Menü öffnen</span>
-        </button>
       </div>
-      <nav class="mobile-nav" id="mobileNav" aria-label="Mobile Navigation">
-        <a href="#tools">Tools</a>
-        <a href="#benefits">Vorteile</a>
-        <a href="mailto:hello@dars-tools.app">Kontakt</a>
-      </nav>
     </header>
 
     <main id="main-content">
@@ -57,7 +37,7 @@
             und Projekte smarter zu steuern – direkt im Browser und ohne Installation.
           </p>
           <div class="hero-actions">
-            <a class="button primary" href="#tools">Tools entdecken</a>
+            <a class="button primary" href="tools/index.html">Tools entdecken</a>
             <a class="button secondary" href="mailto:hello@dars-tools.app">Demo anfragen</a>
           </div>
         </div>
@@ -156,7 +136,7 @@
         </div>
         <div class="footer-links">
           <a href="mailto:hello@dars-tools.app">Kontakt</a>
-          <a href="#tools">Tools</a>
+          <a href="tools/index.html">Tools</a>
           <a href="#hero">Nach oben</a>
           <!-- Optional rechtlich, falls gewünscht:
           <a href="https://dars-online.de/impressum/" target="_blank" rel="noopener">Impressum</a>
@@ -166,24 +146,5 @@
       </div>
     </footer>
 
-    <script>
-      const toggle = document.querySelector('.menu-toggle');
-      const mobileNav = document.getElementById('mobileNav');
-
-      if (toggle && mobileNav) {
-        toggle.addEventListener('click', () => {
-          const isOpen = toggle.getAttribute('aria-expanded') === 'true';
-          toggle.setAttribute('aria-expanded', String(!isOpen));
-          mobileNav.classList.toggle('open');
-        });
-
-        mobileNav.querySelectorAll('a').forEach((link) => {
-          link.addEventListener('click', () => {
-            mobileNav.classList.remove('open');
-            toggle.setAttribute('aria-expanded', 'false');
-          });
-        });
-      }
-    </script>
   </body>
 </html>

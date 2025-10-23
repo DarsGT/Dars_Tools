@@ -13,8 +13,10 @@
     <meta name="theme-color" content="#003382" />
 
     <!-- Assets -->
+    <!-- WICHTIG: Die Assets (z.B. DT_Favicon.png, DT_Logo.png) können im Canvas-Preview nicht geladen werden, da externe Ressourcen nicht unterstützt werden. -->
     <link rel="icon" type="image/png" href="assets/DT_Favicon.png" />
-    <link rel="stylesheet" href="styles/landing.css" />
+    <!-- Verknüpfung zur externen CSS-Datei -->
+    <link rel="stylesheet" href="landing.css" />
     <link rel="manifest" href="manifest.json" />
   </head>
   <body>
@@ -22,6 +24,7 @@
       <div class="header-container">
         <div class="header-spacer" aria-hidden="true"></div>
         <a class="brand" href="#hero" aria-label="Zurück zum Anfang">
+          <!-- HINWEIS: Dieses Bild kann im Preview nicht geladen werden -->
           <img src="assets/DT_Logo.png" alt="Dars Tools" class="brand-logo" />
         </a>
       </div>
@@ -29,45 +32,21 @@
 
     <main id="main-content">
       <section class="hero" id="hero">
-        <div class="hero-background" aria-hidden="true"></div>
         <div class="hero-content">
-          <div class="eyebrow">Willkommen bei Dars Tools Thomas!</div>
           <h1>Intelligente Browser-Tools für leistungsstarke Bauprozesse</h1>
           <p>
-            Unsere Anwendungen unterstützen dich dabei, Leistungsverzeichnisse schneller zu prüfen, Daten zu strukturieren
+            Unsere Anwendungen unterstützen Sie dabei, Leistungsverzeichnisse schneller zu prüfen, Daten zu strukturieren
             und Projekte smarter zu steuern – direkt im Browser und ohne Installation.
           </p>
-          <div class="hero-actions">
-            <a class="button primary" href="tools/index.html">Tools entdecken</a>
-            <a class="button secondary" href="mailto:hello@dars-tools.app">Demo anfragen</a>
-          </div>
-        </div>
-        <div class="hero-preview" aria-hidden="true">
-          <div class="preview-card">
-            <h3>LV Analyzer</h3>
-            <p>PDFs prüfen, Positionen erkennen und Relevanzen vergleichen.</p>
-            <div class="preview-pills">
-              <span>lokal</span>
-              <span>smart</span>
-              <span>schnell</span>
-            </div>
-          </div>
-          <div class="preview-bubbles">
-            <span data-label="Analyse">97%</span>
-            <span data-label="Zeitersparnis">4x</span>
-            <span data-label="Zuverlässigkeit">ISO</span>
-          </div>
+          <!-- Hero Actions und Preview rechts entfernt -->
         </div>
       </section>
 
-      <section class="tools" id="tools" aria-labelledby="tools-title">
-        <div class="section-header">
-          <h2 id="tools-title">Unsere Tools im Überblick</h2>
-          <p>Wähle ein Tool aus, um direkt im Browser loszulegen.</p>
-        </div>
+      <section class="tools" id="tools">
         <div class="tools-grid">
           <a class="tool-card" href="tools/lv-analyzer.html">
             <div class="tool-icon">
+              <!-- HINWEIS: Dieses Bild kann im Preview nicht geladen werden -->
               <img src="assets/LV_Analyzer_Icon.svg" alt="LV Analyzer Icon" />
             </div>
             <div>
@@ -79,6 +58,7 @@
 
           <div class="tool-card disabled" aria-disabled="true">
             <div class="tool-icon">
+              <!-- HINWEIS: Dieses Bild kann im Preview nicht geladen werden -->
               <img src="assets/New_Tool_Icon.svg" alt="Tool Icon" />
             </div>
             <div>
@@ -90,6 +70,7 @@
 
           <div class="tool-card disabled" aria-disabled="true">
             <div class="tool-icon">
+              <!-- HINWEIS: Dieses Bild kann im Preview nicht geladen werden -->
               <img src="assets/New_Tool_Icon.svg" alt="Tool Icon" />
             </div>
             <div>
@@ -105,18 +86,12 @@
 
     <footer class="site-footer">
       <div class="footer-content">
-        <div class="footer-brand">
-          <img src="assets/DT_Logo.png" alt="Dars Tools" />
-          <p>© 2025 Dars Tools. Smarte Browser-Tools für das Bauwesen.</p>
-        </div>
-        <div class="footer-links">
-          <a href="mailto:hello@dars-tools.app">Kontakt</a>
-          <a href="tools/index.html">Tools</a>
-          <a href="#hero">Nach oben</a>
-          <!-- Optional rechtlich, falls gewünscht:
+        <div class="footer-line">
+          <span>© 2025 DARS Gebaudetechnik GmbH</span>
+          <span>|</span>
           <a href="https://dars-online.de/impressum/" target="_blank" rel="noopener">Impressum</a>
+          <span>|</span>
           <a href="https://dars-online.de/datenschutzerklaerung/" target="_blank" rel="noopener">Datenschutz</a>
-          -->
         </div>
       </div>
     </footer>

@@ -16,6 +16,8 @@
   --radius-lg: 28px;
   --radius-md: 20px;
   --radius-sm: 12px;
+  --header-logo-height: clamp(60px, 8vw, 96px);
+  --header-padding-block: clamp(2rem, 5vw, 3rem);
 
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background-color: var(--background);
@@ -73,7 +75,7 @@ img {
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
   justify-content: center;
-  padding: 35px 0.5rem;
+  padding: var(--header-padding-block) 0.5rem;
 }
 
 .brand {
@@ -85,12 +87,8 @@ img {
 }
 
 .brand-logo {
-  height: 35px;
+  height: var(--header-logo-height);
   width: auto;
-}
-
-.header-nav a[aria-current="page"]::after {
-  transform: scaleX(1);
 }
 
 /* Buttons */

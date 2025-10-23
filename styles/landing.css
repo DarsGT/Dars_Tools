@@ -1,4 +1,4 @@
-/* ==============================
+/* =============================
    Dars Tools – Landing Styles
    ============================== */
 
@@ -31,13 +31,23 @@
   box-sizing: border-box;
 }
 
-html,
+/* WICHTIG: Anpassung für Full-Height Layout / Sticky Footer */
+html {
+  /* Stellt sicher, dass der Viewport als minimale Höhe gilt */
+  min-height: 100vh;
+}
+
 body {
   margin: 0;
   padding: 0;
   background: var(--background);
   color: var(--text);
   text-rendering: optimizeLegibility;
+  
+  /* Flexbox-Setup, um den Footer nach unten zu drücken und den Hauptinhalt zu dehnen */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Nimmt mindestens die volle Viewport-Höhe ein */
 }
 
 a {
@@ -56,6 +66,12 @@ img {
   height: auto;
   display: block;
 }
+
+/* Der Main-Content-Bereich muss sich ausdehnen können, um den freien Platz einzunehmen */
+#main-content {
+    flex-grow: 1; /* Sorgt dafür, dass der Hauptinhalt den verfügbaren Platz nutzt */
+}
+
 
 /* ===== Header / Navigation ===== */
 
@@ -169,10 +185,11 @@ img {
 /* ===== Tools (Direkt nach Hero) ===== */
 
 .tools {
-  /* Entfernt den großen Abstand oben, damit die Tools direkt nach Hero folgen */
+  /* Abstand oben entfernt, damit die Tools direkt nach Hero folgen */
   padding: 0 0 3rem;
-  /* Vergrößerter Abstand vor dem Footer, wie gewünscht */
-  margin-bottom: clamp(6rem, 12vw, 8rem); 
+  /* WICHTIG: Den großen Abstand (margin-bottom) zur Kontrolle der Scroll-Sichtbarkeit entfernen, 
+     da der Footer jetzt durch Flexbox nach unten gedrückt wird */
+  margin-bottom: 0; 
 }
 
 /* Entfernt CSS-Regeln für die Tools-Sektion Überschrift */
@@ -268,6 +285,7 @@ img {
   color: rgba(255, 255, 255, 0.9);
   text-align: center;
   font-size: 0.9rem;
+  /* Der Footer wird durch body { flex-direction: column; } automatisch an den unteren Rand gedrückt */
 }
 
 .footer-content {

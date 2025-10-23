@@ -56,11 +56,12 @@ img {
 /* ===== Header / Navigation ===== */
 
 
+
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: var(--background);
+  background: var(--surface);
   border-bottom: 1px solid rgba(0, 32, 77, 0.08);
   box-shadow: 0 12px 24px rgba(0, 32, 77, 0.06);
 }
@@ -71,11 +72,8 @@ img {
   display: grid;
   grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  padding: 1rem 0.5rem;
-}
-
-.header-spacer {
-  justify-self: start;
+  justify-content: center;
+  padding: 35px 0.5rem;
 }
 
 .brand {
@@ -87,46 +85,8 @@ img {
 }
 
 .brand-logo {
-  width: clamp(44px, 8vw, 56px);
-  height: auto;
-}
-
-
-
-.header-nav {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  font-weight: 600;
-  justify-self: end;
-}
-
-.header-nav a {
-  position: relative;
-  padding: 0.25rem 0;
-}
-
-.header-nav a[aria-current="page"] {
-  color: var(--primary);
-  cursor: default;
-}
-
-.header-nav a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -0.35rem;
-  width: 100%;
-  height: 2px;
-  background: var(--primary-accent);
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform 0.3s ease;
-}
-
-.header-nav a:hover::after,
-.header-nav a:focus-visible::after {
-  transform: scaleX(1);
+  height: 35px;
+  width: auto;
 }
 
 .header-nav a[aria-current="page"]::after {

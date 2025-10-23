@@ -17,9 +17,9 @@
   --radius-md: 20px;
   --radius-sm: 12px;
 
-  /* kompakter Header + kleineres Logo */
-  --header-logo-height: clamp(36px, 5vw, 64px);
-  --header-padding-block: clamp(1rem, 3vw, 1.75rem);
+  /* optimierter Header */
+  --header-logo-height: 40px;
+  --header-padding-block: clamp(0.75rem, 2vw, 1.25rem);
 
   font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif;
   background-color: var(--background);
@@ -87,10 +87,9 @@ img {
 }
 
 .brand-logo {
-  /* explizit begrenzen – Bildintrinsics egal */
-  height: auto;
-  max-height: var(--header-logo-height);
+  height: var(--header-logo-height);
   width: auto;
+  object-fit: contain;
 }
 
 /* Buttons */
@@ -447,7 +446,7 @@ img {
 
 .site-footer {
   padding: 2.5rem 0;
-  background: #0c1b3c; /* dunkles Blau passend zur CI */
+  background: #0c1b3c;
   color: rgba(255, 255, 255, 0.85);
 }
 
@@ -511,13 +510,6 @@ img {
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
-  }
-}
-
-/* Kleinstgeräte: harte Obergrenze für Logo */
-@media (max-width: 480px) {
-  :root {
-    --header-logo-height: 40px;
   }
 }
 
